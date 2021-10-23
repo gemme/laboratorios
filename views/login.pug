@@ -1,0 +1,18 @@
+extends ./layout/login.pug
+block content
+    .loginWrapper
+        h1 Login
+        form(method="post")
+            input(type="text", name="username", placeholder="Username")
+            input(type="password", name="password", placeholder="Password")
+            input(type="submit", value="Login")
+        a(href="/register") Do you have an account?. Sign it here
+
+
+
+//- input(type="text", name="firstName", placeholder="FirstName")
+//-         input(type="text", name="username", placeholder="Username")
+//-         input(type="email", name="email", placeholder="Email")
+//-         input(type="password", name="password", placeholder="Password")
+//-         input(type="password", name="passwordconf", placeholder="Password Confirm")
+//-         input(type="submit", value="Login")

@@ -1,0 +1,28 @@
+extends ./layout/login.pug
+block content
+    h1 Register
+    div #{errorMessage}
+    form#registerform(method="post", onsubmit="event.preventDefault(); validateForm();")
+        input(type="text", name="firstName", value=firstName placeholder="FirstName")
+        input(type="text", name="username", value=username placeholder="Username")
+        input(type="email", name="email", value=email placeholder="Email")
+        input#password(type="password", name="password", placeholder="Password")
+        input#passwordconfirm(type="password", name="passwordconf", placeholder="Password Confirm")
+        input(type="submit", value="Register")
+    a(href="/login") Go to Login.
+    script.
+        console.log('I am from login');
+        const password = document.getElementById('password');
+        const passwordconfirm = document.getElementById('passwordconfirm');
+        const registerform = document.getElementById('registerform');
+    
+        function validateForm(){
+            console.log('validateForm');
+            if(password.value !== passwordconfirm.value){
+                alert('password not match');
+            } else {
+                registerform.submit();
+            }
+        }
+
+
